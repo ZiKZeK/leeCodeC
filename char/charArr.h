@@ -99,6 +99,7 @@ public:
             next[i] = j;
         }
         // 使用next数组来做匹配的过程
+
         for (int i = 0; i < s.size(); i++)
         {
             while (j >= 0 && s[i] != t[j + 1])
