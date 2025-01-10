@@ -313,12 +313,14 @@ public:
         // if (crossNode == NULL)
         //     return NULL;
         // return crossNode;   //逻辑出问题
-        while (cur1 != cur2)
+        while (cur1 != nullptr)
         {
+            if (cur1 == cur2)
+            {
+                return cur1;
+            }
             cur1 = cur1->next;
             cur2 = cur2->next;
-            if (cur1 == cur2)
-                return cur1;
         }
         return NULL;
     }
