@@ -1,11 +1,11 @@
 #include <iostream>
+#include <vector>
+#include "test.h"
 using namespace std;
 int main()
 {
-    int n = 5;
-    while (n--)
-    {
-        cout << n << endl;
-    }
+    vector<int> nums = {1, 1, 1, 1, 1};
+    Solution ex;
+    cout << ex.jump(nums);
     return 0;
 }

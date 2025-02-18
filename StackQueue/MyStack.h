@@ -9,20 +9,20 @@ using namespace std;
 
 // 能使用队列的基本方法：
 // push to back, peek/pop from front, size, is empty
-class myStack
+class MyStack
 {
     queue<int> que;
 
 public:
-    myStack() {}
+    MyStack() {}
     void push(int x)
     {
         que.push(x);
     }
-    void pop()
+    int pop()
     {
-        if (que.empty())
-            return;
+        // if (que.empty())
+        //     return;
         int size = que.size() - 1;
 
         while (size--)
@@ -30,7 +30,9 @@ public:
             que.push(que.front());
             que.pop();
         }
+        int result = que.front();
         que.pop();
+        return result;
     }
     int top()
     {

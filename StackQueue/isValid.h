@@ -14,13 +14,17 @@ public:
         {
             if (ch == '(' || ch == '[' || ch == '{')
             {
-                bracket.push(ch);
+                bracket.push(ch); // 这里可以如果push
             }
             else
             {
                 if (bracket.empty())
                     return false;
-                if (ch == bracket.top())
+                // if (ch == bracket.top())  //不是相等关系，而是配对关系
+                char top = bracket.top();
+                if ((top == '(' && ch == ')') ||
+                    (top == '{' && ch == '}') ||
+                    (top == '[' && ch == ']'))
                 {
                     bracket.pop();
                 }
